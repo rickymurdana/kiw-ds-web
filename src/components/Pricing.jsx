@@ -6,35 +6,45 @@ const Pricing = () => {
   const arrPaket = [
     {
       namaPaket: 'Paket 1',
+      codePaket: 'paket1',
       harga: 'Rp 250.000',
       per: 'lantai',
       detailPaket: ['Denah 2D', 'Denah 3D', '3x Revisi']
     },
     {
       namaPaket: 'Paket 2',
+      codePaket: 'paket2',
       harga: 'Rp 400.000',
       per: 'lantai',
       detailPaket: ['Denah 2D', '3D Eksterior (5 View)', '3x Revisi']
     },
     {
       namaPaket: 'Paket 3',
+      codePaket: 'paket3',
       harga: 'Rp 20.000',
       per: 'm2',
       detailPaket: ['Denah 2D', '3D Eksterior (5 View)', 'Gambar Kerja (Detail Bangunan)', '3x Revisi']
     },
     {
       namaPaket: 'Paket Lain Lain',
+      codePaket: 'paketOther',
       harga: 'Rp 150.000',
       per: 'ruangan',
       detailPaket: ['3D Interior']
     }
   ]
   const handleClick = (paket) => {
-    if (paket === 'standard') {
-      const url = 'https://api.whatsapp.com/send?phone=6281326605281&text=Hai+kiw.ds%2C+saya+ingin+order+desain+paket+standard';
+    if (paket === 'paket1') {
+      const url = 'https://api.whatsapp.com/send?phone=6281326605281&text=Hai+kiw.ds%2C+saya+ingin+order+desain+paket+1';
       window.open(url, "_blank") 
-    } else {
-      const url = 'https://api.whatsapp.com/send?phone=6281326605281&text=Hai+kiw.ds%2C+saya+ingin+order+desain+paket+premium';
+    } else if (paket === 'paket2') {
+      const url = 'https://api.whatsapp.com/send?phone=6281326605281&text=Hai+kiw.ds%2C+saya+ingin+order+desain+paket+2';
+      window.open(url, "_blank")
+    } else if (paket === 'paket3') {
+      const url = 'https://api.whatsapp.com/send?phone=6281326605281&text=Hai+kiw.ds%2C+saya+ingin+order+desain+paket+3';
+      window.open(url, "_blank")
+    } else if (paket === 'paketOther') {
+      const url = 'https://api.whatsapp.com/send?phone=6281326605281&text=Hai+kiw.ds%2C+saya+ingin+order+desain+paket+lain';
       window.open(url, "_blank")
     }
   }
@@ -70,7 +80,7 @@ const Pricing = () => {
               ))}
             </div>
             <div className='bg-white'>
-              <button className='w-full py-4 my-4' onClick={() => handleClick(`${item.namaPaket}`)}>Pesan</button>
+              <button className='w-full py-4 my-4' onClick={() => handleClick(`${item.codePaket}`)}>Pesan</button>
             </div>
           </div>
         ))}

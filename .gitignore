@@ -1,5 +1,5 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
+# access_token = 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
 # dependencies
 /node_modules
 /.pnp
